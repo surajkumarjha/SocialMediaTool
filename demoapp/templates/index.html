@@ -1,0 +1,181 @@
+<html>
+  <head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script>
+  	$(document).ready(function(){
+  		$("#pieshow").click(function(){
+  			$("#piediv").css("display","block");
+  			$("#textdiv").css("display","none");
+  			$("#clouddiv").css("display","none");
+  		});
+  		$("#textshow").click(function(){
+  			$("#piediv").css("display","none");
+  			$("#textdiv").css("display","block");
+  			$("#clouddiv").css("display","none");
+  		});
+  		$("#cloudshow").click(function(){
+  			$("#piediv").css("display","none");
+  			$("#textdiv").css("display","none");
+  			$("#clouddiv").css("display","block");
+  		});
+  	});
+  </script>
+  
+  <header>
+    <div class="wrapper">
+        <h1><a href="./home.html">SMAT</a><span class="color">.</span></h1>
+        <nav>
+            <ul>
+                <li><a href="./tab.html">Social Media Analytics</a></li>
+                <li><a href="./about.html">About Us</a></li>
+
+
+
+  <link rel="stylesheet" type="text/css" href="../static/css/reset.css">
+                <link rel="stylesheet" type="text/css" href="../css/style.css">
+                <link rel="stylesheet" type="text/css" href="../static/css/header.css">
+                <link rel="stylesheet" type="text/css" href="../static/css/hero.css">
+                <link rel="stylesheet" type="text/css" href="../static/css/primarycnt.css">
+                <link rel="stylesheet" type="text/css" href="../static/css/calltoaction.css">
+                <link rel="stylesheet" type="text/css" href="../static/css/footer.css">
+                 <link rel="stylesheet" type="text/css" href="../static/css/global.css">
+                <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+
+            </ul>
+        </nav>
+    </div>
+</header>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Positive',     {{p}}],
+          ['Negative',      {{n}}],
+          ['Neutral',  {{ne}}]
+        ]);
+
+        var options = {
+          title: "Sentiment Analysis of {{s}}"
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript" src="../static/js/script.js"></script>
+        <style>
+    header{
+    background-color:   rgba(0,0,0,0.4);
+
+    }
+    footer{
+    background-color:   transparent;
+    }
+    #searchbar{
+     margin-left: auto;
+     margin-right: auto;
+     padding:10px;
+     border-radius: 10px;
+   }
+   #pieshow,#cloudshow,#b1,#textshow{
+    display:inline-block;
+    align : center;
+
+}
+.myButton {
+    box-shadow:inset 0px 0px 14px -3px #f2fadc;
+    background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
+    background-color:#dbe6c4;
+    border-radius:6px;
+    border:1px solid #b2b8ad;
+    display:inline-block;
+    cursor:pointer;
+    color:#757d6f;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ced9bf;
+}
+.myButton:hover {
+    background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
+    background-color:#9ba892;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+    #hero-image {
+    height: 580px;
+    padding-top: 10px;
+    background-image: url("../static/images/hero9.jpg")  ;
+    background-size: 1450px 650px;
+}
+</style>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proper.js/1.14.7/umd/proper.min.js"></script>
+  </head>
+  <body id="hero-image">
+  	<div >
+    
+<p style="text-align:center;">
+<span>
+<a href="http://127.0.0.1:5000/" class="myButton" id="b1">Back</a>
+</span>
+<input id="searchbar" onkeyup="search_keyword()" type="text"
+        name="search" value={{s}} readonly="readonly">
+<span>
+<button class="myButton" id="pieshow">PIE Chart</button>
+</span>
+<span>
+<button class="myButton" id="cloudshow">Tag Cloud</button>
+</span>
+<span>
+<button class="myButton" id="textshow">Comments</button>
+</span>
+</p>   
+</div>
+	<div class="row" id="piediv">
+		<div id="piechart" style="width: 900px; height: 500px;" class="col-md-8">
+    	</div>
+    	 <div class="col-md-3" style="border-style: solid;border-radius: 10px;background-color: white;color: blue;">
+    		<h2>Analysis of {{s}}</h2>
+    		<h4>Positive : {{p}}</h4>
+    		<h4>Negative : {{n}}</h4>
+    		<h4>Neutral : {{ne}}</h4>
+    	</div>
+
+
+	</div>
+    
+	<div class="row" id="textdiv" style="margin-left: 30px; display: none;">
+		<div class="col-md-11">
+     		 {% for your_list_element in my_list %}
+      		<p  style="background-color: white;color: blue;border-style: solid;border-radius: 10px;margin: 5px; height:50px;">{{ your_list_element }}  </p>
+     		{% endfor %}
+    	</div>
+	</div>
+    <div class="row" id="clouddiv" style="display: none;">
+    	<div>
+      		<img src="{{ user_image }}" alt="User Image" style="height: 500px;width: 1100px;margin-left: 80px;">
+    	</div>
+    </div>
+    
+
+  </body>
+</html>

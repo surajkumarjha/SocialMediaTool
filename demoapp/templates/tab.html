@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $(document).ready(function(){
+      $("#b2").click(function(){
+        $("#facediv").css("display","block");
+        $("#twitdiv").css("display","none");
+        $("#hero-image1").css("background-image","url('../static/images/fb1.jpg')");
+      });
+      $("#b1").click(function(){
+        $("#facediv").css("display","none");
+        $("#twitdiv").css("display","block");
+        $("#hero-image1").css("background-image","url('../static/images/tw1.jpg')");
+      });
+    });
+  </script>
+
+
+<header>
+    <div class="wrapper">
+      <a href=""></a>
+        <h1><a href="./home.html">SMAT</a><span class="color">.</span></h1>
+        <nav>
+            <ul>
+                <li><a href="#">Social Media Analytics</a></li>
+                <li><a href="./about.html">About Us</a></li>
+
+                <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css"/>
+
+
+
+
+                <link rel="stylesheet" type="text/css" href="../static/css/reset.css">
+                <link rel="stylesheet" type="text/css" href="../css/style.css">
+                <link rel="stylesheet" type="text/css" href="../static/css/header.css">
+                <link rel="stylesheet" type="text/css" href="../static/css/hero.css">
+                <link rel="stylesheet" type="text/css" href="../static/css/primarycnt.css">
+                <link rel="stylesheet" type="text/css" href="../static/css/calltoaction.css">
+                <link rel="stylesheet" type="text/css" href="../static/css/footer.css">
+                 <link rel="stylesheet" type="text/css" href="../static/css/global.css">
+                <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+            </ul>
+        </nav>
+    </div>
+
+    <style>
+   header{
+    background-color: rgba(0,0,0,0.4);
+
+    }
+    footer{
+    background-color: transparent;
+    }
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+}
+
+#b1,#b2,#b3{
+display:inline-block;
+align : center;
+
+}
+
+#searchbar{
+     margin-left: auto;
+     margin-right: auto;
+     padding:15px;
+     border-radius: 10px;
+   }
+   #hero-image1 {
+    height: 580px;
+    padding-top: 10px;
+    background-image: url("../static/images/tw1.jpg")  ;
+    background-size: 1450px 650px;
+}
+
+
+</style>
+</header>
+
+  <meta charset="utf-8">
+  <title>data pass </title>
+
+</head>
+<body id="hero-image1">
+    <div>
+        <p style="text-align:center;">
+      <span>
+        <button class="button-1" id="b1" onclick="changeOriginal()">Twitter</button>
+      </span>
+      <span>
+        <button class="button-1" id="b2" onclick="change()">Facebook</button>
+      </span>
+      </p>
+      <br><br>
+    </div>
+	  
+      <div id="twitdiv">
+        <img src="../static/images/tw3.jpg" width="600px" height="300px"  >
+      </div>
+      <div id="facediv" style="display: none;">
+        <img src="../static/images/fb.jpg" width="600px" height="300px"  >
+      </div>
+
+		<br>
+		<form name="passdata" action="." method="post">
+			<p style=text-align:center;>
+  				<input id="searchbar" type="text" name="search" placeholder="Enter Page_Id ">
+          <input id="facehidden" type="text" name="face" value = "twitter" style="display: none;">
+  				<input type="submit" value="Analyse" style="height: 50px;width:100;color: white;background-color: blue">
+  			</p>
+		</form>
+    <script>
+      function change(){
+        document.getElementById("facehidden").value="Facebook";
+      }
+      function changeOriginal(){
+        document.getElementById("facehidden").value="twitter";
+      }
+    </script>
+</body>
+</html>
